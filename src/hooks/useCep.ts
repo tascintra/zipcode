@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -7,6 +7,8 @@ import { formSchema } from '@/schema'
 import { zipCodeMask } from '@/utils/masks'
 
 export const useCep = () => {
+  const [isLoading, setIsLoading] = useState(false)
+
   const {
     handleSubmit,
     register,
@@ -33,7 +35,11 @@ export const useCep = () => {
   const zipCode = watch('address.zipCode')
 
   const formSubmit = (data: FormProps) => {
-    console.log(data)
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+      console.table(data)
+    }, 4000)
   }
 
   const handleSetData = useCallback(
@@ -68,6 +74,7 @@ export const useCep = () => {
   return {
     errors,
     register,
+    isLoading,
     formSubmit,
     handleSubmit,
   }

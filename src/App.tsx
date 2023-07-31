@@ -1,15 +1,21 @@
 import { useCep } from '@/hooks/useCep'
+import clsx from 'clsx'
 import { Button, Input } from '@/components'
 
 export default function App() {
-  const { errors, register, formSubmit, handleSubmit } = useCep()
+  const { errors, register, isLoading, formSubmit, handleSubmit } = useCep()
 
   return (
     <main className="mx-auto my-12 w-full max-w-md rounded-md p-4 xs:border xs:p-8 xs:shadow">
       <h2 className="text-center text-3xl font-semibold text-primary-200">
         Cep
       </h2>
-      <div className="mt-1 h-1 w-full rounded-full bg-gradient-to-r from-secondary-100 to-primary-100 shadow" />
+      <div
+        className={clsx(
+          'mt-1 h-1 w-full rounded-full bg-gradient-to-r from-secondary-100 to-primary-100 shadow',
+          { 'animate-gradient-x': isLoading },
+        )}
+      />
       <form
         onSubmit={handleSubmit(formSubmit)}
         className="mt-8 flex w-full flex-col gap-6"
@@ -63,7 +69,9 @@ export default function App() {
           errorMessage={errors.address?.state?.message}
         />
 
-        <Button type="submit">Enviar</Button>
+        <Button type="submit" loading={isLoading}>
+          {isLoading ? 'Enviando...' : 'Enviar'}
+        </Button>
       </form>
     </main>
   )

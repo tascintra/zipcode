@@ -8,5 +8,33 @@ input:not(:-webkit-autofill, :autofill) ~ label {
   top: 12px;
 }
 
+.circle {
+  animation:
+    1s loader ease infinite alternate,
+    1s loader2 linear infinite;
+  stroke: url(#Gradient);
+  stroke-linecap: round;
+  stroke-width: 20;
+  stroke-dasharray: 94.0955352783 94.0955352783;
+  stroke-dashoffset: 0;
+}
+
+@keyframes loader {
+  0% {
+    stroke-dasharray: 84.0955352783 104.0955352783;
+  }
+  100% {
+    stroke-dasharray: 178.19107055664062 10;
+  }
+}
+@keyframes loader2 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -188.19107055664062;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
