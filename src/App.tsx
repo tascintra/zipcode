@@ -1,9 +1,10 @@
 import { useCep } from '@/hooks/useCep'
 import clsx from 'clsx'
-import { Button, Input } from '@/components'
+import { Button, Input, Modal } from '@/components'
 
 export default function App() {
-  const { errors, register, isLoading, formSubmit, handleSubmit } = useCep()
+  const { errors, register, showModal, isLoading, formSubmit, handleSubmit } =
+    useCep()
 
   return (
     <main className="mx-auto my-12 w-full max-w-md rounded-md p-4 xs:border xs:p-8 xs:shadow">
@@ -73,6 +74,7 @@ export default function App() {
           {isLoading ? 'Enviando...' : 'Enviar'}
         </Button>
       </form>
+      <Modal showModal={showModal} />
     </main>
   )
 }

@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from 'react'
+import { AddressProps, FormProps } from '@/types'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { AddressProps, FormProps } from '@/types'
 import { formSchema } from '@/schema'
 import { zipCodeMask } from '@/utils/masks'
 
 export const useCep = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   const {
     handleSubmit,
@@ -39,6 +40,7 @@ export const useCep = () => {
     setTimeout(() => {
       setIsLoading(false)
       console.table(data)
+      setShowModal(true)
     }, 4000)
   }
 
@@ -74,6 +76,7 @@ export const useCep = () => {
   return {
     errors,
     register,
+    showModal,
     isLoading,
     formSubmit,
     handleSubmit,
