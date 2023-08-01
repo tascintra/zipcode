@@ -6,7 +6,7 @@ Applying principles.
 
 <p align="center">
   <a href="#-the-project">The project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-learning-goals">Learning goals</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project-goals">Project goals</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-the-code">The code</a>
@@ -23,29 +23,30 @@ Applying principles.
 <br>
 
 <p align="center">
-  <img alt="REST Countries API project design example" src="./public/desktop-preview.jpg" width="100%">
+  <img alt="Zipcode main screen snapshot" src="./public/desktop-preview.png" width="100%">
 </p>
 
 <br>
 
 ## 💻 The project
 
-The challenge was to build an application that fetches countries data from an API and shows a countries galery on main page with flags and infos. There is also a country detail page. The challenge also has a dark theme switcher.
+The project consisted into build an application that fetches CEP data from an API and shows address information in the main page inputs based on CEP info provided by the user and a button to send information as a registration page.
 
 Users should be able to:
 
-- See all world countries flags and information
-- Search for countries names and filter them by region
-- View details page with details about the selected country
-- Switch between dark and light theme
+- Fill the form fields and see input masks
+- See address information based on brazilian CEP provided info
 - See mouse hover and click effects
 - Experience the optimal layout depending on their device's screen size
 
 <br>
 
-## 🎯 Learning goals
+## 🎯 Project goals
 
-My main goal for this project is to learn how to control layout theme and integrate it with React.
+- Test form manipulation with react-hook-form
+- Implement form validation with zod
+- Integrate both react-hook-form and zod
+- Apply DRY and SOLID principles
 
 <br>
 
@@ -56,14 +57,15 @@ This project was built using following libraries/frameworks:
 - React
 - Tailwind
 - Vite
-- React Router DOM
+- React Hook Form
+- Zod
 - Axios
 
 <br>
 
 ## 🌎 Deploy
 
-Live Site URL: [REST Countries API](https://restcountriesapi-zeta.vercel.app/)
+Live Site URL: [Zipcode](https://zipcode-mu.vercel.app/)
 
 <br>
 
