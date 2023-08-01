@@ -16,7 +16,7 @@ export const Button = ({ children, loading }: ButtonProps) => {
       <button
         className={clsx(
           'w-full rounded-md bg-gradient-to-t from-primary-200 to-primary-100 px-4 py-2 font-semibold text-white shadow ring-2 ring-transparent transition focus:ring-gray-500',
-          { 'saturate-150': !loading },
+          { 'saturate-150 hover:saturate-200': !loading },
           { 'cursor-wait grayscale': loading },
         )}
       >
